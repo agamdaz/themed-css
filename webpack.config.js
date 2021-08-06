@@ -6,7 +6,7 @@ const createVariants = require('parallel-webpack').createVariants;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 function getThemes () {
-  const files = fs.readdirSync('./src/themes/');
+  const files = fs.readdirSync(path.resolve(__dirname, 'src/themes'));
   return files.map(fileName => fileName.replace(/(^_|.scss$)/g, ''));
 }
 
@@ -21,16 +21,10 @@ const variants = {
 
 function createConfig(options) {
   return {
-    mode: 'development',
     entry: path.join(paths.SRC, 'app.js'),
     output: {
       path: paths.DIST,
       filename: 'app.bundle.js'
-    },
-
-    devServer: {
-      contentBase: paths.DIST,
-      hot: true
     },
 
     plugins: [
@@ -57,7 +51,7 @@ function createConfig(options) {
             },{
               loader: "sass-loader", options: {
                 sourceMap: true,
-                prependData: `@import "${options.themes}";`,
+                additionalData: `@import "${options.themes}";`,
                 sassOptions: {
                   includePaths: [path.join(__dirname, 'src/themes')]
                 }
@@ -72,4 +66,12 @@ function createConfig(options) {
   }
 }
 
-module.exports = createVariants(variants, createConfig);
+const webpackVariants = createVariants(variants, createConfig);
+webpackVariants.push({
+  devServer: {
+    contentBase: paths.DIST,
+    hot: true,
+  }
+})
+
+module.exports = webpackVariants;

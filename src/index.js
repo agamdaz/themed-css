@@ -1,0 +1,2 @@
+// Empty file to avoid Webpack: "ERROR in Entry module not found: Error: Can't resolve './src'"
+// https://stackoverflow.com/questions/49772863/webpack-4-error-in-entry-module-not-found-error-cant-resolve-src#answer-49772864

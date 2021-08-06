@@ -4,7 +4,7 @@
   "description": "A brief example of how to build various CSS files with a different set of variables for different themes combining SCSS frameworks and tailored CSS code from components",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
+    "dev": "webpack serve --mode development",
     "build": "webpack",
     "test": "test"
   },
@@ -12,21 +12,21 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.15.0",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.14.0",
-    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
     "babel-loader": "^8.2.2",
     "bootstrap-sass": "^3.4.1",
-    "css-loader": "^5.2.4",
-    "html-webpack-plugin": "^4.0.4",
-    "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^4.14.1",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.0",
+    "node-sass": "^6.0.1",
     "parallel-webpack": "^2.6.0",
-    "sass-loader": "^8.0.2",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "sass-loader": "^12.1.0",
+    "webpack": "^5.48.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "react": "^17.0.2",
