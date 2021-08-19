@@ -69,7 +69,7 @@ function createConfig(options) {
 const webpackVariants = createVariants(variants, createConfig);
 webpackVariants.push({
   devServer: {
-    contentBase: paths.DIST,
+    static: paths.DIST,
     hot: true,
   }
 })
